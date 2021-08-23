@@ -2,7 +2,7 @@
 @import '../../assets/style/common/mixins';
 
 .advantages {
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 60px;
   position: relative;
 
@@ -111,6 +111,7 @@
   &__color-picker {
     width: calc((100% / 12) * 4 + 15px);
     margin-left: 30px;
+    margin-top: responsiveValue(465, 165, 719, 920, vh);
 
     @media screen and (max-width: $lg) {
       width: 100%;

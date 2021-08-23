@@ -1,12 +1,15 @@
 import FreeLetters from './views/Intro/Intro.script'
 import ColorPicker from './components/ColorPicker/ColorPicker.script'
-import {headerFill, headerMenu} from './components/Header/Header.script'
-import animations from "./scripts/animations";
+import SectionVisible from './scripts/sectionVisible'
+import animations from './scripts/animations'
+import {headerFill, headerMenu, headerAnchor, highlightAnchor} from './components/Header/Header.script'
 
 // Functions
 	headerFill()
 	headerMenu()
 	animations()
+	headerAnchor()
+	highlightAnchor()
 
 // Classes
 	new FreeLetters().init()

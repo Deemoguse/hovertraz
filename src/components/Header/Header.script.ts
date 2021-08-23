@@ -1,3 +1,5 @@
+import SectionVisible from "../../scripts/sectionVisible";
+
 export function headerMenu (): void {
 	const menu: HTMLElement = document.querySelector('.header__nav')
 	const buttons = document.querySelectorAll('.header__nav-toggle')
@@ -31,4 +33,38 @@ export function headerFill (): void {
 			header.classList.remove('header--active')
 		}
 	})
+}
+
+
+export function headerAnchor () {
+	const links: NodeListOf<HTMLLinkElement> = document.querySelectorAll('.header__nav-item')
+
+	links.forEach(el => {
+		const anchor = document.querySelector(el.getAttribute('href'))
+		const deactivate = () => {
+			const activeELem = document.querySelector('.header__nav-item--active')
+			if (activeELem) activeELem.classList.remove('header__nav-item--active')
+		}
+
+		// Click event
+		el.addEventListener('click', (e) => {
+			e.preventDefault(); deactivate()
+			anchor.scrollIntoView({behavior: "smooth"})
+			el.classList.add('header__nav-item--active')
+		})
+	})
+}
+
+
+export function highlightAnchor () {
+	const section = new SectionVisible()
+	const headerLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.header__nav-item')
+
+	window.addEventListener('scroll', () => headerLinks.forEach(el => {
+		if (el.getAttribute('href') === `#${section.getActiveSection.id}`) {
+			el.classList.add('header__nav-item--active')
+		} else {
+			el.classList.remove('header__nav-item--active')
+		}
+	}))
 }

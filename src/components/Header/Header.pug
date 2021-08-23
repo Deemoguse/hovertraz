@@ -9,10 +9,7 @@ header.header
 				include:inlineSvg ../../assets/svg/cross.svg
 
 			each item, index in GLOB_HEADER_LINKS
-				a.header__nav-item(
-					class=index < 1 && 'header__nav-item--active'
-					href=item.link
-				)= item.title
+				a.header__nav-item(href=item.link)= item.title
 
 		// Show menu
 		button.header__nav-toggle.header__nav-toggle--menu
