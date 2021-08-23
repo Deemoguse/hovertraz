@@ -1,0 +1,21 @@
+.advantages
+	.container.advantages__container
+		.advantages__content.anim(data-anim-delay=200)
+			h3.advantages__tagline преимущества
+			h2.advantages__title дизайн
+			p.advantages__desc= GLOB_ADVANTAGES_DESC
+			ul.advantages__list.list
+				each item in GLOB_ADVANTAGES_LIST
+					li.list__item
+						.list__item-marker
+						p.list__item-text= item
+
+		.advantages__color-picker.anim(data-anim-delay=400)
+			include ../../components/ColorPicker/ColorPicker
+
+	.advantages__video.anim(data-anim-delay=0)
+		button.advantages__video-play
+			include:inlineSvg ../../assets/svg/play-2.svg
+
+		img.advantages__video-poster(src="assets/img/advantages-video-poster.png")
+		<!-- video -->

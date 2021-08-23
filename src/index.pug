@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Rizor Hovertrax 4.0
+		link(rel="stylesheet", href="style.css")
+	body
+
+		include components/Header/Header
+
+		.sections
+			.sections__item(data-anchor="intro")
+				include views/Intro/Intro
+			.sections__item(data-anchor="advantages")
+				include views/Advantages/Advantages
+			.sections__item(data-anchor="specifications")
+				include views/Specifications/Specifications
+			.sections__item(data-anchor="forWhom")
+				include views/ForWhom/ForWhom
+
+		script(src="main.js")

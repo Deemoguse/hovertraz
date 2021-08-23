@@ -1,0 +1,8 @@
+@function responsiveValue ($maxValue, $minValue, $maxViewport, $minViewport, $viewportType: vw) {
+  @return calc(
+    #{$minValue}px -
+    (#{$maxValue} - #{$minValue }) *
+    ((100#{$viewportType} - #{$maxViewport}px) /
+    (#{$maxViewport} - #{$minViewport}))
+  )
+}

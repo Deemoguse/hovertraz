@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import 'common/*';
+
+:root {
+  --blue: #3a30f8;
+  --light-blue: #7a76ff;
+}
+
+* {
+  padding: 0;
+  border: none;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  @media screen and (max-width: $lg) {
+    background-color: whitesmoke;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+input, textarea, button {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.sections__wrapper,
+.sections__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  //overflow: hidden;
+}
+
+.sections__wrapper {
+  bottom: 0;
+}
+
+.sections__container {
+  bottom: auto;
+  overflow: visible;
+}

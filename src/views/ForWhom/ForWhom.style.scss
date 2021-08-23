@@ -1,0 +1,117 @@
+@import "../../assets/style/common/functions";
+@import "../../assets/style/common/variables";
+@import "../../assets/style/common/mixins";
+
+.for-whom {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 164px);
+  padding: 70px 0 50px;
+  margin-top: 164px;
+  position: relative;
+  background-color: var(--blue);
+
+  @media screen and (max-width: $lg) {
+    margin-top: 0;
+  }
+
+  // Elems
+
+  &__container {
+    overflow: clip;
+    flex: 1
+  }
+
+
+  &__tagline {
+    margin-bottom: 90px;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+
+    @media screen and (max-width: $xl) {
+      margin-bottom: 75px;
+    }
+
+    @media screen and (max-width: $lg) {
+      margin-bottom: 60px;
+      font-style: italic;
+    }
+  }
+
+
+  &__info {
+    width: calc(100% / 11 * 3 - 30px);
+
+    @media screen and (max-width: $xl) {
+      width: calc(100% / 11 * 4 - 30px);
+    }
+
+    @media screen and (max-width: $lg) {
+      width: 100%;
+    }
+  }
+
+
+  &__desc {
+    line-height: 145%;
+    color: white;
+
+    & * {
+      color: white;
+    }
+
+    & > * + * {
+      margin-top: 30px;
+    }
+  }
+
+
+  &__button {
+    display: inline-block;
+    padding: 18px 40px 19px;
+    margin-top: responsiveValue(100, 30, 720, 1080, vh);
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--blue);
+    background-color: white;
+    cursor: pointer;
+    transition: 0.25s;
+
+    @include state(hover) {
+      transition: 0.15s;
+      transform: scale(1.05);
+    }
+
+    @include state(active) {
+      transform: scale(1);
+    }
+
+    @media screen and (max-width: $lg) {
+      margin-top: 60px;
+    }
+  }
+
+
+  &__img {
+    position: absolute;
+    top: -48px;
+    left: calc(50% - 215px);
+    right: 0;
+    bottom: 10%;
+    background-image: url('assets/img/for-whom-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    @media screen and (max-width: $xl) {
+      left: calc(50% - 100px);
+    }
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+  }
+}

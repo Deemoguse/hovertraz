@@ -1,0 +1,35 @@
+{
+	"GLOB_HEADER_LINKS": [
+		{"title": "преимущества", "link": "#advantages"},
+		{"title": "характеристики", "link": "#characteristics"},
+		{"title": "для кого", "link": "#forWhom"}
+	],
+	"GLOB_ADVANTAGES_LIST": [
+		"плавные линии",
+		"подсветка светодиодными индикаторами",
+		"рельефные бамперы, оснащенные защитными панелями"
+	],
+	"GLOB_ADVANTAGES_COLOR_PICKER": [
+		{
+			"color": "#e2e837",
+			"img": "assets/img/item-black.png"
+		},
+		{
+			"color": "#00b6f1",
+			"img": "assets/img/item-black.png"
+		},
+		{
+			"color": "#e23232",
+			"img": "assets/img/item-black.png"
+		},
+		{
+			"color": "#f0efef",
+			"img": "assets/img/item-black.png"
+		},
+		{
+			"default": true,
+			"color": "#000000",
+			"img": "assets/img/item-black.png"
+		}
+	]
+}

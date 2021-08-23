@@ -1,0 +1,31 @@
+@import './variables';
+
+// Containers
+
+@mixin mc /* make-contaier */ ($vps) {
+  @media screen and (min-width: #{$vps}) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include mc($sm) {
+    max-width: 540px;
+  }
+
+  @include mc($md) {
+    max-width: 720px;
+  }
+
+  @include mc($lg) {
+    max-width: 960px;
+  }
+
+  @include mc($xl) {
+    max-width: 1200px;
+  }
+}

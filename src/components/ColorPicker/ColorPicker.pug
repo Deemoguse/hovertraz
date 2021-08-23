@@ -1,0 +1,21 @@
+.color-picker
+	.color-picker__line
+	.color-picker__desc
+		.advantages__title цвет
+		.advantages__desc Модель представлена сразу в нескольких цветах.
+
+	.color-picker__controller.controller
+		each item, index in GLOB_ADVANTAGES_COLOR_PICKER
+			button.controller__variant(
+				data-color-picker-id=(index)
+				class=(item.default && 'controller__variant--active')
+				style=('--color:' + item.color)
+			)
+
+	.color-picker__img
+		each item, index in GLOB_ADVANTAGES_COLOR_PICKER
+			img.inner(
+				data-color-picker-id=(index)
+				class=(item.default && 'inner--active')
+				src=(item.img)
+			)

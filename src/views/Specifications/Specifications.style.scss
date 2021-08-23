@@ -1,0 +1,194 @@
+@import '../../assets/style/common/functions';
+@import '../../assets/style/common/mixins';
+
+.specifications {
+  height: 100vh;
+  margin-top: 60px;
+  position: relative;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: auto 85%;
+
+  @media screen and (min-width: $lg) {
+    background-image: url('assets/img/intro-bg.png');
+  }
+
+  @media screen and (max-width: $lg) {
+    height: auto;
+    margin-top: 80px;
+  }
+
+  // Elems
+
+  &__container {
+    padding-top: responsiveValue(220, 145, 719, 920, vh);
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      padding-top: 155px;
+      padding-bottom: 60px;
+    }
+  }
+
+
+  &__info {
+    max-width: 400px;
+    width: calc((100% / 12) * 4);
+
+    @media screen and (max-width: $lg) {
+      max-width: 100%;
+      width: calc(100% - 20px);
+      padding: 35px;
+      margin: 0 auto;
+      background: white;
+    }
+  }
+
+
+  &__tagline {
+    margin-bottom: 90px;
+    font-size: 20px;
+    color: var(--blue);
+    text-transform: uppercase;
+
+    @media screen and (max-width: $xl) {
+      margin-bottom: 75px;
+    }
+
+    @media screen and (max-width: $lg) {
+      margin-bottom: 60px;
+      font-style: italic;
+    }
+  }
+
+
+  &__title {
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+
+  &__desc {
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 30px;
+
+    @media screen and (max-width: $xl) {
+      margin-top: 25px;
+    }
+  }
+
+
+  @include object('list') {
+    margin-top: 35px;
+    list-style: none;
+
+    // Elems
+
+    & > li + li {
+      margin-top: 35px;
+
+      @media screen and (max-width: $xl) {
+        margin-top: 25px;
+      }
+
+      @media screen and (max-width: $lg) {
+        margin-top: 15px;
+      }
+    }
+
+    @include elem('item') {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    @include elem('item-marker') {
+      display: inline-block;
+      min-width: 30px;
+      height: 4px;
+      margin-top: 13px;
+      margin-right: 12px;
+      background-color: #000000;
+    }
+  }
+
+
+  @include object('important') {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    // Elems
+
+    & > * + * {
+      margin-left: 20px;
+
+      @media screen and (max-width: 450px) {
+        margin-top: 30px;
+        margin-left: 0;
+      }
+    }
+
+    @include elem('accent') {
+      font-family: 'Rubik Mono One', sans-serif;
+      font-size: 60px;
+      color: var(--blue);
+
+      @media screen and (max-width: $xl) {
+        font-size: 38px;
+      }
+
+      @media screen and (max-width: $xl) {
+        font-size: 38px;
+      }
+
+      & small {
+        font-family: inherit;
+        font-size: 24px;
+        color: inherit;
+      }
+    }
+
+    @include elem('text') {
+      max-width: 130px;
+      margin-top: 25px;
+      font-size: 16px;
+      font-weight: 400;
+
+      @media screen and (max-width: 450px) {
+        max-width: 100%;
+        margin-top: 0;
+        font-size: 18px;
+      }
+    }
+  }
+
+
+  &__img {
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: calc(50% - 115px);
+    background-image: url('assets/img/specifications-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: $lg) {
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+}

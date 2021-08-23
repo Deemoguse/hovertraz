@@ -1,0 +1,207 @@
+@import "../../assets/style/common/functions";
+@import "../../assets/style/common/variables";
+@import "../../assets/style/common/mixins";
+
+// Free Letters
+
+.free-letters {
+  display: flex;
+  flex-direction: column;
+
+  &__row,
+  &__item {
+    display: inline-block;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 70px 0 50px;
+  position: relative;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: auto 85%;
+
+  @media screen and (min-width: $md) {
+    padding: 100px 0 50px;
+  }
+
+  @media screen and (min-width: $lg) {
+    background-image: url('assets/img/intro-bg.png');
+  }
+
+  // Elems
+
+  &__container {
+    padding-top: responsiveValue(165, 78, 720, 1080, vh);
+    position: relative;
+  }
+
+
+  &__anotation {
+    width: max-content;
+
+    @media screen and (max-width: $lg) {
+      width: 100%;
+    }
+  }
+
+
+  &__play {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 395px;
+    bottom: calc(100% - 45px);
+    transition: 0.15s;
+    cursor: pointer;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+
+    @media screen and (max-width: $xl), screen and (max-height: 719px) {
+      bottom: calc(100% - 75px);
+    }
+
+    @media screen and (max-height: 719px) {
+      left: 315px;
+      bottom: calc(100% - 55px);
+    }
+
+    // States
+
+    & svg {
+      & #playIcon {
+        transition: 0.15s;
+        transform-origin: center;
+      }
+
+      @include state (hover) {
+        & #playIcon {
+          transform: scale(1.05);
+          fill: var(--light-blue);
+        }
+      }
+
+      @include state (active) {
+        & #playIcon {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+
+  &__play-line {
+    width: 17px;
+    height: responsiveValue(71, 0, 720, 1080, vh);
+    margin-top: 4px;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+    transform: translateX(-10px);
+
+    @media screen and (max-height: 719px), screen and (max-width: $xl) {
+      display: none;
+    }
+  }
+
+
+  &__title {
+    max-width: 670px;
+    position: relative;
+    text-transform: uppercase;
+    user-select: none;
+
+    @media screen and (max-width: $lg) {
+      text-align: center;
+    }
+
+    & * {
+      font-family: 'Rubik Mono One', sans-serif;
+      font-size: 80px;
+      letter-spacing: 0.07em;
+      line-height: 1.2;
+
+      @media screen and (max-width: $lg) {
+        color: white;
+        text-shadow: 0 0 20px rgba(0,0,0,0.2);
+      }
+      @media screen and (max-width: $md), screen and (max-height: 719px) {
+        font-size: 60px;
+      }
+      @media screen and (max-width: $sm) {
+        font-size: 40px;
+      }
+    }
+  }
+
+
+  &__tagline {
+    max-width: 340px;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    @media screen and (max-width: $lg) {
+      margin-top: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      text-align: center;
+      color: white;
+    }
+  }
+
+
+  &__arrow {
+    display: block;
+    height: 95px;
+    width: 70px;
+    margin-top: 30px;
+    background-image: url('assets/svg/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+
+    @media screen and (max-width: $lg) {
+      margin-left: auto;
+      margin-right: auto;
+      background-image: url('assets/svg/arrow-bold.svg');
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)) brightness(5);
+    }
+  }
+
+
+  &__img {
+    height: calc(100% - 100px);
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 124px);
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url('assets/img/intro-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    @media screen and (max-width: $xl) {
+      left: 50%;
+    }
+
+    @media screen and (max-width: $lg) {
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+}
